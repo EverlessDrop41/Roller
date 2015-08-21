@@ -6,7 +6,7 @@ public class DoorControl : MonoBehaviour
     public Transform OpenedPosition;
     public Transform ClosedPosition;
 
-    public float MoveTime = 1f;
+    public float MoveSpeed = 1f;
 
     public bool OpenOnStart = true;
 
@@ -36,7 +36,7 @@ public class DoorControl : MonoBehaviour
         {
             if (!Utils.VectorRoughlyEqual(transform.position, OpenedPosition.position, 0.5f))
             {
-                transform.position = Vector3.Lerp(transform.position, OpenedPosition.position, MoveTime * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, OpenedPosition.position, MoveSpeed * Time.deltaTime);
             }
             else
             {
@@ -47,7 +47,7 @@ public class DoorControl : MonoBehaviour
         {
             if (!Utils.VectorRoughlyEqual(transform.position, ClosedPosition.position, 0.5f))
             {
-                transform.position = Vector3.Lerp(transform.position, ClosedPosition.position, MoveTime * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, ClosedPosition.position, MoveSpeed * Time.deltaTime);
             }
             else
             {

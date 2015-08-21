@@ -53,21 +53,21 @@ public class ThirdPersonCamera : MonoBehaviour {
                             if (!renders.ContainsKey(r))
                             {
                                 renders.Add(r, m.color.a);
-                                Debug.Log(m.GetFloat("_Mode"));
+                                //Debug.Log(m.GetFloat("_Mode"));
                                 m.SetFloat("_Mode", 2);
-                                Debug.LogFormat("_SrcBlend: {0}",m.GetInt("_SrcBlend"));
+                                //Debug.LogFormat("_SrcBlend: {0}",m.GetInt("_SrcBlend"));
                                 m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-                                Debug.LogFormat("_DstBlend: {0}", m.GetInt("_DstBlend"));
+                                //Debug.LogFormat("_DstBlend: {0}", m.GetInt("_DstBlend"));
                                 m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-                                Debug.LogFormat("_ZWrite: {0}", m.GetInt("_ZWrite"));
+                                //Debug.LogFormat("_ZWrite: {0}", m.GetInt("_ZWrite"));
                                 m.SetInt("_ZWrite", 0);
                                 m.DisableKeyword("_ALPHATEST_ON");
                                 m.EnableKeyword("_ALPHABLEND_ON");
                                 m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-                                Debug.Log(m.renderQueue);
+                                //Debug.Log(m.renderQueue);
                                 m.renderQueue = 3000;
                                 m.color = new Color(m.color.r, m.color.g, m.color.b, m.color.a * 0.5f);
-                                Debug.LogFormat("Alpha: {0}", m.color.a);
+                                //Debug.LogFormat("Alpha: {0}", m.color.a);
                             }
                         }
                     }
