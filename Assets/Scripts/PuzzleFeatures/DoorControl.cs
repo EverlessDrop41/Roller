@@ -6,6 +6,8 @@ public class DoorControl : MonoBehaviour
     public Transform OpenedPosition;
     public Transform ClosedPosition;
 
+    public ElectricalObject input;
+
     public float MoveSpeed = 1f;
 
     public bool OpenOnStart = true;
@@ -13,6 +15,13 @@ public class DoorControl : MonoBehaviour
     public bool isOpen { get; private set; }
 
     bool isClosing, isOpening;
+
+    bool isTransitioning
+    {
+        get {
+            return isClosing || isOpening;
+        }
+    }
 
     void Start()
     {
@@ -22,12 +31,23 @@ public class DoorControl : MonoBehaviour
 
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Open();
         }
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            Close();
+        }
+        */
+
+        if (input.IsOutputting())
+        {
+            Open();
+        }
+        else
         {
             Close();
         }
@@ -58,13 +78,16 @@ public class DoorControl : MonoBehaviour
 
     public void ToggleOpenState()
     {
-        if (isOpen)
+        if (!isTransitioning)
         {
-            Close();
-        }
-        else
-        {
-            Open();
+            if (isOpen)
+            {
+                Close();
+            }
+            else
+            {
+                Open();
+            }
         }
     }
 
