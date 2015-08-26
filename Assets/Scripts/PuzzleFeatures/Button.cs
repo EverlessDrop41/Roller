@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 [RequireComponent(typeof(Collider))]
-public class Button : MonoBehaviour
+public class Button : ElectricalObject
 {
     public Vector3 ButtonPressedChange = new Vector3(0, -0.5f);
 
@@ -11,13 +12,19 @@ public class Button : MonoBehaviour
     Vector3 OriginPos;
     Vector3 DownPos;
 
+    public override bool IsOutputting()
+    {
+        return IsActive;
+    }
+
     public void Start()
     {
         OriginPos = transform.position;
         DownPos = OriginPos + ButtonPressedChange;
     }
 
-    public bool colliding = false;
+    protected bool colliding = false;
+    bool IsActive = false;
 
     public void OnCollisionStay(Collision collision)
     {
@@ -29,6 +36,7 @@ public class Button : MonoBehaviour
             if (contact.normal == new Vector3(0, -1, 0))
             {
                 transform.position = DownPos;
+                IsActive = true;
             }
         }
     }
@@ -44,6 +52,11 @@ public class Button : MonoBehaviour
         if (!colliding)
         {
             transform.position = OriginPos;
+            IsActive = false;
+        }
+        else
+        {
+            Invoke("ResetButton", ResetDelay);
         }
     }
 }
