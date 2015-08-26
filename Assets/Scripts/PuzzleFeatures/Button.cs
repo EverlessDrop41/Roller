@@ -54,9 +54,5 @@ public class Button : ElectricalObject
             transform.position = OriginPos;
             IsActive = false;
         }
-        else
-        {
-            Invoke("ResetButton", ResetDelay);
-        }
     }
 }
