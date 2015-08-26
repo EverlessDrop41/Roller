@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButton("Jump"))
         {
             currentJumpCharge += currentJumpCharge <= MaxJumpCharge ? JumpChargePerSecond * Time.deltaTime : 0;
-            Debug.LogFormat("Charging {0}", currentJumpCharge);
+            //Debug.LogFormat("Charging {0}", currentJumpCharge);
         }
 
         if (Input.GetButtonUp("Jump"))
