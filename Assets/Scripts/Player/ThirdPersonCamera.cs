@@ -11,6 +11,9 @@ public class ThirdPersonCamera : MonoBehaviour {
     public float height = 1f;
     public float distance = 2f;
 
+    public float MaxHeight = 3f;
+    public float MinHeight = 0.5f;
+
     public bool hideBlockingObjects = true;
 
     private Vector3 offsetX;
@@ -18,7 +21,7 @@ public class ThirdPersonCamera : MonoBehaviour {
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        offsetX = new Vector3(0, height, distance);
+        offsetX = new Vector3(0, 0, distance);
     }
 
     Dictionary<Renderer, float> renders = new Dictionary<Renderer, float>();
@@ -26,7 +29,11 @@ public class ThirdPersonCamera : MonoBehaviour {
     void LateUpdate()
     {
         float RotateAxis = Input.GetAxis("RotateCamera") * 10 * Time.deltaTime;
+        float RotateY = Input.GetAxis("Mouse Y") * 10 * Time.deltaTime;
 
+        height += RotateY;
+
+        offsetX.y = Mathf.Clamp(height, MinHeight, MaxHeight);
         offsetX = Quaternion.AngleAxis(RotateAxis * turnSpeed, Vector3.up) * offsetX;
         transform.position = player.position + offsetX;
         transform.LookAt(player.position);
