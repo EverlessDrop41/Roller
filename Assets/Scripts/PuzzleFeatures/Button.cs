@@ -17,10 +17,13 @@ public class Button : ElectricalObject
         return IsActive;
     }
 
+    bool EnableReset;
+
     public void Start()
     {
         OriginPos = transform.position;
         DownPos = OriginPos + ButtonPressedChange;
+        EnableReset = ResetDelay >= 0;
     }
 
     protected bool colliding = false;
@@ -43,8 +46,11 @@ public class Button : ElectricalObject
 
     public void OnCollisionExit(Collision collision)
     {
-        colliding = false;
-        Invoke("ResetButton", ResetDelay);
+        if (EnableReset)
+        {
+            colliding = false;
+            Invoke("ResetButton", ResetDelay);
+        }
     }
 
     public void ResetButton()
