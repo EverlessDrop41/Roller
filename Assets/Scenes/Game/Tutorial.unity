@@ -913,6 +913,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1377938759}
+    - target: {fileID: 11407118, guid: d4199c8563e9bed4d9cdf6759b4fa159, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4199c8563e9bed4d9cdf6759b4fa159, type: 2}
   m_IsPrefabParent: 0
