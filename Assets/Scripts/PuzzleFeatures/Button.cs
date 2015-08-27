@@ -32,7 +32,7 @@ public class Button : ElectricalObject
         if (collision.contacts.Length > 0)
         {
             ContactPoint contact = collision.contacts[0];
-            Debug.Log(contact.normal);
+            //Debug.Log(contact.normal);
             if (contact.normal == new Vector3(0, -1, 0))
             {
                 transform.position = DownPos;
