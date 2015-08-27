@@ -917,8 +917,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1227892601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.33999991, y: .00999999978, z: -3.11999989}
-  m_LocalScale: {x: 1.13731194, y: 1.23515868, z: 13.5015736}
+  m_LocalPosition: {x: 3.33999991, y: -.00200000009, z: -3.11999989}
+  m_LocalScale: {x: 1.13731194, y: 1.21099269, z: 13.5015736}
   m_Children: []
   m_Father: {fileID: 1052904432}
   m_RootOrder: 2
@@ -1340,6 +1340,38 @@ Prefab:
       objectReference: {fileID: 1628568842}
     - target: {fileID: 11418168, guid: d7a2027e76dc6b44296958d8949aad6a, type: 2}
       propertyPath: OpenOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418168, guid: d7a2027e76dc6b44296958d8949aad6a, type: 2}
+      propertyPath: AnimCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418168, guid: d7a2027e76dc6b44296958d8949aad6a, type: 2}
+      propertyPath: AnimCurve.m_Curve.Array.data[1].value
+      value: 1.1920929e-07
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418168, guid: d7a2027e76dc6b44296958d8949aad6a, type: 2}
+      propertyPath: AnimCurve.m_Curve.Array.data[1].inSlope
+      value: .316903859
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418168, guid: d7a2027e76dc6b44296958d8949aad6a, type: 2}
+      propertyPath: AnimCurve.m_Curve.Array.data[1].outSlope
+      value: .316903859
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418168, guid: d7a2027e76dc6b44296958d8949aad6a, type: 2}
+      propertyPath: AnimCurve.m_Curve.Array.data[0].value
+      value: .987499952
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418168, guid: d7a2027e76dc6b44296958d8949aad6a, type: 2}
+      propertyPath: AnimCurve.m_Curve.Array.data[0].time
+      value: .00833333377
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418168, guid: d7a2027e76dc6b44296958d8949aad6a, type: 2}
+      propertyPath: AnimCurve.m_PostInfinity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418168, guid: d7a2027e76dc6b44296958d8949aad6a, type: 2}
+      propertyPath: MoveSpeed
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1957,8 +1989,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2075897763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .819999993, y: 0, z: -5.84000015}
-  m_LocalScale: {x: 6.17978382, y: 1.25653791, z: 8.17012787}
+  m_LocalPosition: {x: .819999993, y: -0, z: -5.77899981}
+  m_LocalScale: {x: 6.17978382, y: 1.1981504, z: 8.04728127}
   m_Children: []
   m_Father: {fileID: 1052904432}
   m_RootOrder: 1
