@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 
+[AddComponentMenu("Electricity/Button")]
 [RequireComponent(typeof(Collider))]
 public class Button : ElectricalObject
 {

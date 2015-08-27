@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Electricity/Wire")]
 [RequireComponent(typeof(Renderer))]
 public class Wire : ElectricalObject {
     public ElectricalObject Input;
